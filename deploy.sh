@@ -1,15 +1,5 @@
 #!/bin/bash
 
-
-
-function testInstalled {
-    if `dpkg-query -W $1 | grep -q "no packages found"`; then
-        echo "in if"
-        return 1;
-    fi
-    echo "failed if"
-    return 0;
-}
 cd $1/
 mv script/* ./
 source ./.env
